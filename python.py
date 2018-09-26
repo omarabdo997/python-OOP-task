@@ -10,6 +10,9 @@ class Matrix:
         return "#"+str(self.__id)
 
     def rows(self):
+        return len(self.mat)
+
+    def cols(self):
         matleng = 0
         for i in self.mat:
             if(type(i) != list):
@@ -17,9 +20,6 @@ class Matrix:
             elif (len(i) >= matleng):
                 matleng = len(i)
         return matleng
-
-    def cols(self):
-        return len(self.mat)
 
     def dimensions(self):
         return str(self.rows())+"X"+str(self.cols())
@@ -50,7 +50,7 @@ class Matrix:
         return c
 
 
-A = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+A = Matrix([[1, 2, 3], [4, 5, 6]])
 rows = A.rows()
 col = A.cols()
 dim = A.dimensions()
