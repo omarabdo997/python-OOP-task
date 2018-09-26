@@ -20,7 +20,7 @@ class Matrix:
                 break
             else:
                 print(
-                    "You must enter the same number of columns for each row programe closing")
+                    "You must enter the same number of columns for each row program closing")
                 sys.exit(1)
 
     def get_id(self):
