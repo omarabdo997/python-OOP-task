@@ -1,10 +1,27 @@
+import sys
+
+
 class Matrix:
     __counter = 0
 
     def __init__(self, mat):
-        self.mat = mat
-        self.__id = Matrix.__counter
-        Matrix.__counter += 1
+        while(1):
+            check = 1
+            self.mat = mat
+            no_of_cols = self.cols()
+            for i in self.mat:
+                if(type(i) != list):
+                    check = 1
+                elif(len(i) != no_of_cols):
+                    check = 0
+            self.__id = Matrix.__counter
+            Matrix.__counter += 1
+            if(check == 1):
+                break
+            else:
+                print(
+                    "You must enter the same number of columns for each row programe closing")
+                sys.exit(1)
 
     def get_id(self):
         return "#"+str(self.__id)
@@ -50,7 +67,7 @@ class Matrix:
         return c
 
 
-A = Matrix([[1, 2, 3], [4, 5, 6]])
+A = Matrix([[1, 2, 3], [4, 5], [2, 3, 4]])
 rows = A.rows()
 col = A.cols()
 dim = A.dimensions()
